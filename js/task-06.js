@@ -19,9 +19,18 @@
  * #validation-input.invalid {border-color: #f44336;}
  */
 
-const cumulateSimbols = [];
+let cumulateSimbols = [];
 const inputText = document.querySelector("#validation-input");
 
 inputText.addEventListener("input", (event) => {
-  console.log(event.data);
+  if (event.data === null) {
+    cumulateSimbols.pop();
+  } else {
+    cumulateSimbols.push(event.data);
+  }
+  if (cumulateSimbols.length == 6) {
+    inputText.setAttribute("class", "valid");
+  } else {
+    inputText.setAttribute("class", "invalid");
+  }
 });

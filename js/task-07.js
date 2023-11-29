@@ -8,3 +8,11 @@
  * <span id="text">Abracadabra!</span>
  *
  */
+
+const inputBar = document.getElementById("font-size-control");
+const spanText = document.getElementById("text");
+
+spanText.style.fontSize = `${inputBar.value}px`;
+inputBar.addEventListener("input", () => {
+  spanText.style.fontSize = `${inputBar.value}px`;
+});

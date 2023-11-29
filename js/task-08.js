@@ -23,3 +23,22 @@
  * -Muestre el objeto con los datos introducidos en la consola y borre los valores
  * de los campos espacio del formulario usando el método reset.
  */
+
+const submitButton = document.querySelector("button");
+const formInput = document.getElementsByClassName("login-form");
+document.querySelector(".login-form").setAttribute("id", "form");
+
+const formObject = submitButton.addEventListener("click", (event) => {
+  event.preventDefault();
+  if (formInput[0][0].value === "" || formInput[0][1].value === "") {
+    alert("Advertencia: Debe rellenar todos los espacios");
+  } else {
+    const obj = {
+      email: formInput[0][0].value,
+      password: formInput[0][1].value,
+    };
+    console.log(obj);
+    document.getElementById("form").reset();
+    return obj;
+  }
+});
