@@ -32,5 +32,4 @@ const newImages = [...images]
       `<li class="image-item"><img src="${url}" alt="${alt}" width="350" /></li>`
   )
   .join("");
-console.log(newImages);
 imagesList.insertAdjacentHTML("beforeend", newImages);
