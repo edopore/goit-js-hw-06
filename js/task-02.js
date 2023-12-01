@@ -20,8 +20,8 @@ const ingredients = [
 ];
 
 const elements = document.querySelector("#ingredients");
-for (const ingredient of ingredients) {
+ingredients.map((ingredient) => {
   let newIngredient = document.createElement("li");
   newIngredient.textContent = ingredient;
   elements.append(newIngredient);
-}
+});
