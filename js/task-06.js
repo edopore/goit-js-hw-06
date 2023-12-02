@@ -19,18 +19,13 @@
  * #validation-input.invalid {border-color: #f44336;}
  */
 
-let cumulateSimbols = [];
 const inputText = document.querySelector("#validation-input");
 
-inputText.addEventListener("input", (event) => {
-  if (event.data === null) {
-    cumulateSimbols.pop();
-  } else {
-    cumulateSimbols.push(event.data);
-  }
-  if (cumulateSimbols.length == 6) {
-    inputText.setAttribute("class", "valid");
-  } else {
+inputText.addEventListener("blur", (event) => {
+  console.log(inputText.value.length);
+  if (inputText.value.length !== 6) {
     inputText.setAttribute("class", "invalid");
+  } else {
+    inputText.setAttribute("class", "valid");
   }
 });
