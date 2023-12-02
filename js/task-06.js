@@ -22,7 +22,6 @@
 const inputText = document.querySelector("#validation-input");
 
 inputText.addEventListener("blur", (event) => {
-  console.log(inputText.value.length);
   if (inputText.value.length !== 6) {
     inputText.setAttribute("class", "invalid");
   } else {
